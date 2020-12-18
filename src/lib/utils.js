@@ -97,7 +97,7 @@ const getProlificId = (data) => {
     }
   }
 
-  const prolificId = getQueryVariable("PROLIFIC_PID");
+  const prolificId = getQueryVariable("PID");
   // const sessionId = getQueryVariable("SESSION_ID");
   // const studyId = getQueryVariable("STUDY_ID");
 
