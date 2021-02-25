@@ -13,11 +13,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/fontawesome-free/css/all.css";
 import { getTurkUniqueId, sleep } from "./lib/utils";
-import {
-  addToFirebase,
-  createFirebaseDocument,
-  addEarningsToFirebase,
-} from "./firebase.js";
+import { addToFirebase, createFirebaseDocument } from "./firebase.js";
 require("dotenv").config();
 
 let ipcRenderer = false;
@@ -55,9 +51,6 @@ class App extends React.Component {
                 if (data.trial_index > 1) {
                   addToFirebase(data);
                 }
-                if (data.subtrial_type === 'show_payment') {
-                  addEarningsToFirebase(data);
-                }
               }
               // electron
               if (ipcRenderer) {
@@ -67,7 +60,6 @@ class App extends React.Component {
               }
             },
             on_finish: (data) => {
-              // time to save total_earnings to firebase?
               if (ipcRenderer) {
                 ipcRenderer.send("end", "true");
               } else if (psiturk) {
