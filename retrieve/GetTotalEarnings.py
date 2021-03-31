@@ -18,4 +18,15 @@ db = firestore.client()
 for row in sys.stdin:
     id = row.strip()
     sub = db.document(u'db_pilot_test', id).get()
-    print(f'{sub.id}, {sub.to_dict().get("totalEarnings") or 0}')
+
+    if sub.exists:
+        #print (f'it exists, {sub.id}')
+        #print(f'{sub.id}, {sub.to_dict().get("totalEarnings") or 0}')
+        try:
+             sub.to_dict().get("totalEarnings")
+        except AttributeError:
+             print (f'Attribute error, {sub.id}')
+        else:
+             print(f'{sub.id}, {sub.to_dict().get("totalEarnings")}')
+    #else:
+        #print (f'nope it does not, {sub.id}')
