@@ -98,7 +98,7 @@
     "expt1": "You will begin <b>Main Block </b> in",
     "post_break_resume": "You will resume the task in",
     "redirect_to_prolific": "The experiment has ended.<br></br>You will now be redirected to the Prolific website to be considered as having completed the study.<br></br>Please wait ...",
-    "redirect_to_next_task": "The experiment has ended.<br></br>You will now be redirected to the next step.<br></br>Please wait ..."
+    "redirect_to_next_step": "The experiment has ended.<br></br>You will now be redirected to the next step.<br></br>Please wait ..."
   },
   "cumulative_rew": {
     "total": "Total:<br>"
