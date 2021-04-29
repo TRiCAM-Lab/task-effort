@@ -92,7 +92,6 @@ const onlineTimeline = MTURK
       taskBlock(exptBlock1),
       showPayment(5000, exptBlock1),
       // buildCountdown(lang.countdown.redirect_to_prolific, 5),
-      // redirectToProlific("https://app.prolific.co/submissions/complete?cc=2394EAA8", 3),
       buildCountdown(lang.countdown.redirect_to_next_step, 5),
       redirectToLATISRouter(3),
     ];
