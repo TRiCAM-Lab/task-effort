@@ -74,7 +74,7 @@ const onlineTimeline = MTURK
   : // PROLIFIC VERSION OF THE TASK BELOW:
     [
       // commented out for now/quick debugging:
-      // experimentStart(),
+      experimentStart(),
       userId(),
       preamble,
       bluePracticeInstructions(),
