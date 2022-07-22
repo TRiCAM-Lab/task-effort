@@ -229,6 +229,35 @@ psiturk> server on #start server
 psiturk> debug #debug mode
 ```
 
+## Usage with Firebase
+
+This program has also been expanded into firebase, to be used with Prolific (a similar platform to Mturk). When running this version, it should default to Prolific when you run it in the browser. You will know when it says that it is collecting the prolific ID.
+
+You'll need to follow these steps to run the task on prolific:
+
+- build the application: `npm run build:firebase`
+- deploy it to firebase: `firebase deploy`
+
+Only deploy if you have approval and you are ready to make the changes be visible online.
+
+After that, you can set up your prolific account to collect the Prolific ID in the URL, as it will use a string query in order to retrieve the prolific ID. It uses the query string "PID".
+
+**Data Retrieval**
+
+To get the bonus payments, you can run the following command in the "retrieve" folder:
+
+`python GetTotalEarnings.py < ListofIDs.csv`
+
+where "ListofIDs.csv" is a csv of the Prolific IDs you would like to get the payments for. It will create a list of the IDs and payment for bulk bonus payment in Prolific.
+
+`python GetTotalEarnings.py < ListofIDs.csv | pbcopy`
+
+this will immediately copy the text so you can paste it into Prolific.
+
+`python GetTotalEarnings.py < ListofIDs.csv > earnings.csv`
+
+this will create a csv that saves the list, if you so choose to do that.
+
 ## Best Practices
 
 ### Write good commit messages

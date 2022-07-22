@@ -5,7 +5,8 @@ import experimentEnd from "../trials/experimentEnd";
 import practiceAndMainBlockDivider from "../trials/practiceAndMainBlockDivider";
 import taskBlock from "./taskBlock";
 import showPayment from "../trials/showPayment";
-import redirectToProlific from "../trials/redirectToProlific";
+// import redirectToProlific from "../trials/redirectToProlific";
+import redirectToLATISRouter from "../trials/redirectToLATISRouter"
 import userId from "../trials/userId";
 import relaxReminder from "../trials/relaxReminder";
 import recordNow from "../trials/recordNow";
@@ -90,8 +91,9 @@ const onlineTimeline = MTURK
       buildCountdown(lang.countdown.expt1, 3),
       taskBlock(exptBlock1),
       showPayment(5000, exptBlock1),
-      buildCountdown(lang.countdown.redirect_to_prolific, 5),
-      redirectToProlific(),
+      // buildCountdown(lang.countdown.redirect_to_prolific, 5),
+      buildCountdown(lang.countdown.redirect_to_next_step, 5),
+      redirectToLATISRouter(3),
     ];
 
 export const tl = ONLINE ? onlineTimeline : inLabTimeline;

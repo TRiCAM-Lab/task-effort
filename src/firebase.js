@@ -6,7 +6,7 @@ const config = {
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
   databaseURL: process.env.REACT_APP_databaseURL,
-  projectId: "task-effort",
+  projectId: "taskeffort-6c221",
   storageBucket: process.env.REACT_APP_storageBucket,
   messagingSenderId: process.env.REACT_APP_messagingSenderId,
   appId: process.env.REACT_APP_appId,
@@ -39,6 +39,12 @@ const addToFirebase = (data) => {
     .set(data);
 };
 
+const addEarningsToFirebase = (data) => {
+  db.collection(collectionName)
+    .doc(data.uniqueId)
+    .update({ totalEarnings: data.total_earnings });
+}
+
 // Export types that exists in Firestore
 // This is not always necessary, but it's used in other examples
 const { TimeStamp, GeoPoint } = firebase.firestore;
@@ -48,6 +54,7 @@ export {
   GeoPoint,
   createFirebaseDocument,
   addToFirebase,
+  addEarningsToFirebase,
   createFirebaseDocumentRandom,
 };
 
